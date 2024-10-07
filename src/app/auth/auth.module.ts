@@ -3,15 +3,19 @@ import { CommonModule } from '@angular/common';
 
 import { AuthRoutingModule } from './auth-routing.module';
 import { UserRegisterComponent } from './user-register/user-register.component';
+import { UserRegisterRoutingModule } from './user-register/user-register-routing.module';
+import { UserRegisterModule } from './user-register/user-register.module';
 
 
 @NgModule({
   declarations: [
-    UserRegisterComponent
+
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    UserRegisterModule,
+
   ]
 })
 export class AuthModule { }
