@@ -26,11 +26,8 @@
           <small class="text-danger">La contraseña debe contener al menos 6 caracteres.</small>
         </div>
       </div>
-      <button type="submit" class="btn btn-primary"> Registrarse </button>
+      <button type="submit" class="btn btn-primary" [disabled]="registerUserForm.invalid">Registrarse</button>
     </form>
   </div>
-
-
   </div>
-
 </div>
