@@ -22,10 +22,23 @@ export class UserRegisterComponent {
     })
   }
 
+  //almacenamiento de datos en localstorage
   onSubmit():void{
+    if( this.registerUserForm.valid){
+      const userData = this.registerUserForm.value;
 
+      //almacenamiento en localstorage
+      const existingUsers = JSON.parse(localStorage.getItem('users')|| '[]');
+      existingUsers.push(userData);
+      localStorage.setItem('users', JSON.stringify(existingUsers));
+
+      alert('Usuario registrado exitosamente');
+
+      //blanqueo de formulario luego del envio
+      this.registerUserForm.reset();
+    }else{
+      alert('Por favor, completa todos los campos requeridos')
+    }
   }
-
-
 
 }
