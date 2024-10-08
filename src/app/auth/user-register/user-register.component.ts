@@ -28,7 +28,7 @@ export class UserRegisterComponent {
       const userData = this.registerUserForm.value;
 
       //almacenamiento en localstorage
-      const existingUsers = JSON.parse(localStorage.getItem('users')|| '[]');
+      const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
       existingUsers.push(userData);
       localStorage.setItem('users', JSON.stringify(existingUsers));
 
