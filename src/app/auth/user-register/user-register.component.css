@@ -1,0 +1,11 @@
+.form-register input{
+  margin-bottom: 2px
+}
+
+.form-register label{
+  margin-bottom: 8px
+}
+
+.form-register button {
+  margin-bottom: 10px; /* Espaciado de 20px entre todos los elementos */
+}

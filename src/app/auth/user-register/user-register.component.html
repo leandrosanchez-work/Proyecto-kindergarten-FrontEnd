@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <form [formGroup]="registerUserForm" (ngSubmit)="onSubmit()" >
+      <form [formGroup]="registerUserForm" (ngSubmit)="onSubmit()" class="p-4 form-register" >
       <h3 class="mb-4"> Formulario de Registro</h3>
       <div class="form-group">
         <label for="name"> Ingrese Nombre </label>
@@ -36,7 +36,7 @@
         <input type="radio" formControlName="role" value="teacher"  id="teacher" class="form-check-input">
         <label for="teacher"> Profesor(a)</label>
       </div>
-      <button  type="submit" class="btn btn-primary w-100 " [disabled]="registerUserForm.invalid">Registrarse</button>
+      <button type="submit" class="btn btn-primary w-100 " [disabled]="registerUserForm.invalid">Registrarse</button>
     </form>
   </div>
   </div>
