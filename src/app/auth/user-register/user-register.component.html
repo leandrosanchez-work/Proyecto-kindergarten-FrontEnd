@@ -36,7 +36,10 @@
         <input type="radio" formControlName="role" value="teacher"  id="teacher" class="form-check-input">
         <label for="teacher"> Profesor(a)</label>
       </div>
-      <button type="submit" class="btn btn-primary w-100 " [disabled]="registerUserForm.invalid">Registrarse</button>
+      <button type="submit" class="btn btn-primary w-100 " [disabled]="registerUserForm.invalid || isLoading">
+        <span *ngIf="isLoading" class="spinner-border spinner-border-sm"></span>
+        <span *ngIf="!isLoading"> Registrarse </span>
+      </button>
     </form>
   </div>
   </div>

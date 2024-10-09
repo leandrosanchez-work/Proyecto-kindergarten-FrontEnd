@@ -23,9 +23,12 @@ export class UserRegisterComponent {
     })
   }
 
+  isLoading = false;
+
   //almacenamiento de datos en localstorage
   onSubmit():void{
     if( this.registerUserForm.valid){
+      this.isLoading = true;
       const userData = this.registerUserForm.value;
 
       //almacenamiento en localstorage
@@ -33,7 +36,11 @@ export class UserRegisterComponent {
       existingUsers.push(userData);
       localStorage.setItem('users', JSON.stringify(existingUsers));
 
-      alert('Usuario registrado exitosamente');
+      setTimeout(() =>{
+        console.log('Datos enviador', this.registerUserForm.value);
+        this.isLoading= false;
+        alert('Usuario registrado exitosamente');
+      }, 2000)
 
       //blanqueo de formulario luego del envio
       this.registerUserForm.reset();
