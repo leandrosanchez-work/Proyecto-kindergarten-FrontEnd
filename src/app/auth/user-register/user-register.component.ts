@@ -25,6 +25,11 @@ export class UserRegisterComponent {
   }
 
   isLoading = false;
+  showPassword = true;
+
+  togglePasswordVisibility(){
+    this.showPassword = !this.showPassword;
+  }
 
   //almacenamiento de datos en localstorage
   onSubmit():void{

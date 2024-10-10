@@ -21,7 +21,12 @@
 
       <div class="form-group">
         <label for="password"> Ingrese una Contraseña </label>
-        <input type="password" id="password" formControlName="password" class="form-control" placeholder="6+ caracteres"/>
+        <input type="password" id="password" formControlName="password" [type]="showPassword ? 'password' : 'text' " class="form-control" placeholder="6+ caracteres"/>
+        <div class="input-group-append">
+          <button type="button" class="btn btn-online-secondary" (click)="togglePasswordVisibility()">
+              {{ showPassword ? 'Mostrar Contraseña' : 'Ocultar' }}
+          </button>
+        </div>
         <div *ngIf="registerUserForm.get('password')?.invalid && registerUserForm.get('password')?.touched">
           <small class="text-danger">La contraseña debe contener al menos 6 caracteres.</small>
         </div>
