@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { User } from '../models/user.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +26,7 @@ export class AuthServiceService {
  *
  * El backend debe retornar un 201 si el registro es exitoso o un mensaje de error si falla.
  */
-  register( userDate: any): Observable<any>{
+  register( userDate: User): Observable<any>{
     return this.http.post(this.apiUrl, userDate)
   }
 }
