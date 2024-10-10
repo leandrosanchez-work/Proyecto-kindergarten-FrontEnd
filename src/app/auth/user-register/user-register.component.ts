@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,7 +12,7 @@ export class UserRegisterComponent {
 
   registerUserForm!: FormGroup;
 
-  constructor(private fb: FormBuilder){}
+  constructor(private fb: FormBuilder, private router: Router){}
 
   //metodo para manejar el formgroup
   ngOnInit(): void {
@@ -40,6 +41,8 @@ export class UserRegisterComponent {
         console.log('Datos enviador', this.registerUserForm.value);
         this.isLoading= false;
         alert('Usuario registrado exitosamente');
+
+        this.router.navigate(['/login'])
       }, 2000)
 
       //blanqueo de formulario luego del envio

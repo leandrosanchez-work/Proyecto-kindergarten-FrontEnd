@@ -5,7 +5,7 @@
       <h3 class="mb-4"> Formulario de Registro</h3>
       <div class="form-group">
         <label for="name"> Ingrese Nombre </label>
-        <input type="text" id="name" formControlName="name" class="form-control"/>
+        <input type="text" id="name" formControlName="name" class="form-control" placeholder="Nombre" />
         <div *ngIf="registerUserForm.get('name')?.invalid && registerUserForm.get('name')?.touched">
           <small class="text-danger">Ingrese un nombre</small>
         </div>
