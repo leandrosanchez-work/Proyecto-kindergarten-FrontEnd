@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthServiceService } from 'src/app/service/AuthService.service';
 
 
 @Component({
@@ -12,14 +13,14 @@ export class UserRegisterComponent {
 
   registerUserForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private router: Router){}
+  constructor(private fb: FormBuilder, private authService: AuthServiceService ,private router: Router){}
 
   //metodo para manejar el formgroup
   ngOnInit(): void {
     this.registerUserForm = this.fb.group({
       name: ['',Validators.required],
       email: ['',[Validators.required, Validators.email]],
-      password: ['',[Validators.required, Validators.minLength(6)]],
+      password: ['',[Validators.required, Validators.minLength(8)]],
       role: ['', Validators.required]
     })
   }
