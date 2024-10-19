@@ -1,0 +1,9 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="text-center">
+    <h1 class="display-4">¡Bienvenido, {{ userName }}!</h1>
+    <p class="lead">Nos alegra verte de nuevo en la aplicación.</p>
+    <p>Usa los enlaces de navegación para explorar las funcionalidades.</p>
+    <a routerLink="/profile" class="btn btn-primary btn-lg">Ir a mi Perfil</a>
+    <button (click)="logout()" class="btn btn-secondary btn-lg">Cerrar sesión</button>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card shadow-sm p-4" style="max-width: 400px; width: 100%;">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold">Bienvenidos!</h2>
+      <p>Ingrese a su cuenta</p>
+    </div>
+
+    <!-- Formulario de inicio de sesión -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <div class="form-group">
+          <label for="email" class="form-label">Correo</label>
+          <input type="email" id="email" formControlName="email" class="form-control" placeholder="heather@gmail.com" />
+        </div>
+      </div>
+      <div class="mb-3">
+        <div class="form-group">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" id="password" formControlName="password" class="form-control" placeholder="********" />
+        </div>
+      </div>
+
+      <!-- Mostrar mensaje de error si las credenciales no son correctas -->
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+      <div class="text-center mt-3">
+        <a href="#" class="text-decoration-none">¿Olvidó su contraseña?</a>
+      </div>
+    </form>
+  </div>
+</div>

@@ -3,14 +3,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthServiceService } from 'src/app/service/AuthService.service';
 
-
 @Component({
-  selector: 'app-user-register',
+  selector: 'app-register',
   templateUrl: './user-register.component.html',
   styleUrls: ['./user-register.component.css']
 })
-export class UserRegisterComponent {
-
+export class RegisterComponent {
   registerUserForm!: FormGroup;
 
   constructor(private fb: FormBuilder, private authService: AuthServiceService ,private router: Router){}
@@ -23,7 +21,7 @@ export class UserRegisterComponent {
       password: ['',[Validators.required, Validators.minLength(8)]],
       role: ['', Validators.required]
     })
-  }
+  } 
 
   isLoading = false;
   showPassword = true;
